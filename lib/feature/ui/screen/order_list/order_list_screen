@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/widgets/header.dart';
+import 'package:fruit_hub/feature/ui/screen/order_list/product_list.dart';
+
+class OrderListScreen extends StatelessWidget {
+  const OrderListScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+      backgroundColor: Colors.grey[100],
+      body: SafeArea(
+        child: Column(  
+          children: [
+            OrderHeader(title: 'My Basket'),
+            Expanded(
+              child: OrderProductsList(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
