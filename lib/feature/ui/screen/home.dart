@@ -1,0 +1,130 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../widget/combo_card.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 24.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SvgPicture.asset(
+                    'assets/svg/settings.svg',
+                    height: 11.0,
+                    width: 22.0,
+                  ),
+                  Column(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/my_basket.svg',
+                        height: 24.0,
+                        width: 24.0,
+                      ),
+                      const Text(
+                        "My basket",
+                        style: TextStyle(
+                          fontFamily: 'Brandon Grotesque',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 10.0,
+                          color: Color(0xFF27214D),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24.0),
+              const Text(
+                "Hello Tony, What fruit salad\ncombo do you want today?",
+                style: TextStyle(
+                  fontFamily: 'Brandon Grotesque',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20.0,
+                  color: Color(0xFF27214D),
+                  height: 1.3,
+                ),
+              ),
+              const SizedBox(height: 24.0),
+              // --- SEARCH BAR ROW ---
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 56,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF3F4F9), // Light grey background
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: const TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search for fruit salad combos",
+                          hintStyle: TextStyle(
+                            fontFamily: 'Brandon Grotesque',
+                            color: Color(0xFF86869E),
+                            fontSize: 14,
+                          ),
+                          prefixIcon: Icon(Icons.search, color: Color(0xFF86869E)),
+                          border: InputBorder.none, // Removes the default line
+                          contentPadding: EdgeInsets.symmetric(vertical: 18),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  SvgPicture.asset(
+                    'assets/svg/search_settings.svg',
+                    height: 18.0,
+                    width: 26.0,
+                  )
+                ],
+              ),
+              const SizedBox(height: 40.0),
+              const Text(
+                "Recommended Combo",
+                style: TextStyle(
+                  fontFamily: 'Brandon Grotesque',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 24.0,
+                  color: Color(0xFF27214D),
+                  height: 1.3,
+                ),
+              ),
+              const SizedBox(height: 24.0),
+              // Horizontal list of cards
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ComboCard(
+                      name: "Honey lime combo",
+                      price: "2,000",
+                      imagePath: "assets/images/fruit_1.png", // Ensure path is correct
+                    ),
+                    SizedBox(width: 16),
+                    ComboCard(
+                      name: "Berry mango combo",
+                      price: "8,000",
+                      imagePath: "assets/images/fruit_2.png",
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

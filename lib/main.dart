@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/feature/ui/screen/home.dart'; // Adjust the import path as needed
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const Scaffold(body: Text("fruit hub")),
+      title: 'Fruit Hub',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeScreen(),
     );
   }
 }
+
