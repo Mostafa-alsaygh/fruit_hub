@@ -16,8 +16,10 @@ class ComboCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width * 0.37;
+
     return Container(
-      width: 150, // Set a fixed width for the card
+      width: width,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: backgroundColor,

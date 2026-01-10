@@ -24,6 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    double searchHeight = MediaQuery.of(context).size.height * 0.150;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -39,11 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SvgPicture.asset(
-                        'assets/svg/settings.svg',
-                        height: 11.0,
-                        width: 22.0,
-                      ),
+                      SvgPicture.asset('assets/svg/settings.svg'),
                       Column(
                         children: [
                           SvgPicture.asset(
@@ -81,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Expanded(
                         child: Container(
-                          height: 56,
+                          height: searchHeight,
                           decoration: BoxDecoration(
                             color: const Color(0xFFF3F4F9),
                             borderRadius: BorderRadius.circular(16),
@@ -99,7 +98,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Color(0xFF86869E),
                               ),
                               border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(vertical: 18),
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: 18,
+                              ),
                             ),
                           ),
                         ),
@@ -130,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ComboCard(
                           name: "Honey lime combo",
                           price: "2,000",
-                          imagePath: "assets/images/Glowing_Berry_Fruit.png",
+                          imagePath: "assets/images/glowing_Berry_Fruit.png",
                         ),
                       ),
                       const SizedBox(width: 24),
@@ -138,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ComboCard(
                           name: "Berry mango combo",
                           price: "8,000",
-                          imagePath: "assets/images/Honey_Lime_Peach.png",
+                          imagePath: "assets/images/honey_Lime_Peach.png",
                         ),
                       ),
                     ],
@@ -148,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             // Category chips - full width
-            buildCategoryChips(
+            CategoryChips(
               categories: categories,
               selectedCategory: selectedCategory,
               onCategorySelected: (category) {
@@ -167,19 +168,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   ComboCard(
                     name: "Honey lime combo",
                     price: "2,000",
-                    imagePath: "assets/images/Glowing_Berry_Fruit.png",
+                    imagePath: "assets/images/glowing_Berry_Fruit.png",
                   ),
                   const SizedBox(width: 16),
                   ComboCard(
                     name: "Berry mango combo",
                     price: "8,000",
-                    imagePath: "assets/images/Honey_Lime_Peach.png",
+                    imagePath: "assets/images/honey_Lime_Peach.png",
                   ),
                   const SizedBox(width: 16),
                   ComboCard(
                     name: "Quinoa fruit salad",
                     price: "10,000",
-                    imagePath: "assets/images/Glowing_Berry_Fruit.png",
+                    imagePath: "assets/images/glowing_Berry_Fruit.png",
                   ),
                 ],
               ),
