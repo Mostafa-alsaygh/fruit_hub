@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class OrderProductItem extends StatelessWidget {
   final String title;
   final String packs;
   final String price;
-  final IconData icon;
+  final Widget icon;
 
   const OrderProductItem({
     super.key,
@@ -27,13 +28,8 @@ class OrderProductItem extends StatelessWidget {
               color: Colors.orange[100],
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Expanded(
-              child: Icon(
-              icon,
-              color: Colors.orange,
-              size: iconWidth * 0.5,
-            ),
-          )),
+            child: icon,
+          ),
           const SizedBox(width: 16),
           Expanded(
             child: Column(
@@ -80,26 +76,26 @@ class OrderProductsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(16),
-      children: const [
+      children: [
         OrderProductItem(
           title: 'Quinoa fruit salad',
           packs: '2packs',
           price: '₦ 20,000',
-          icon: Icons.restaurant_menu,
+          icon: SvgPicture.asset('assets/svg/fake_pic.svg'),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         OrderProductItem(
           title: 'Melon fruit salad',
           packs: '2packs',
           price: '₦ 20,000',
-          icon: Icons.restaurant_menu,
+          icon: SvgPicture.asset('assets/svg/fake_pic.svg'),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         OrderProductItem(
           title: 'Tropical fruit salad',
           packs: '2packs',
           price: '₦ 20,000',
-          icon: Icons.restaurant_menu,
+          icon: SvgPicture.asset('assets/svg/fake_pic.svg'),
         ),
       ],
     );

@@ -17,7 +17,7 @@ class OrderHeader extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
-              color: Color(0x2020201A),
+              color: Color(0xFFFFFFFF),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
