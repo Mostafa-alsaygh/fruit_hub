@@ -41,12 +41,10 @@ class _AddToBasketScreenState extends State<AddToBasketScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Top section with orange background
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
                 children: [
-                  // Go back button
                   Align(
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
@@ -142,7 +140,6 @@ class _AddToBasketScreenState extends State<AddToBasketScreen> {
                         children: [
                           Row(
                             children: [
-                              // Decrement button
                               GestureDetector(
                                 onTap: _decrementQuantity,
                                 child: Container(
@@ -163,7 +160,6 @@ class _AddToBasketScreenState extends State<AddToBasketScreen> {
                                 ),
                               ),
                               const SizedBox(width: 24),
-                              // Quantity text
                               Text(
                                 quantity.toString(),
                                 style: const TextStyle(
@@ -174,7 +170,6 @@ class _AddToBasketScreenState extends State<AddToBasketScreen> {
                                 ),
                               ),
                               const SizedBox(width: 24),
-                              // Increment button
                               GestureDetector(
                                 onTap: _incrementQuantity,
                                 child: Container(
@@ -206,7 +201,6 @@ class _AddToBasketScreenState extends State<AddToBasketScreen> {
                         ],
                       ),
                       const SizedBox(height: 40),
-                      // One Pack Contains section
                       const Text(
                         'One Pack Contains:',
                         style: TextStyle(
@@ -245,10 +239,10 @@ class _AddToBasketScreenState extends State<AddToBasketScreen> {
                         ),
                       ),
                       const Spacer(),
-                      // Bottom buttons
+
                       Row(
                         children: [
-                          // Favorite button
+
                           GestureDetector(
                             onTap: () {
                               setState(() {
