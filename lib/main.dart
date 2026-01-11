@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/routing/app_router.dart';
 import 'package:fruit_hub/feature/ui/screen/home.dart'; // Adjust the import path as needed
 
 void main() {
@@ -10,12 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Fruit Hub',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      routerConfig: AppRouter.router,
     );
   }
 }
