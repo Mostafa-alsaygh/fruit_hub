@@ -8,19 +8,18 @@ class AuthenticationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const FruitBasketSection(
-              image: 'assets/images/img_fruits_outside_basket.png',
-            ),
-            Expanded(
-              child: Padding(
+      body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const FruitBasketSection(
+                image: 'assets/images/img_fruits_outside_basket.png',
+              ),
+              Padding(
                 padding: EdgeInsets.all(24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Spacer(),
+                    const SizedBox(height: 56),
                     Text(
                       'What is your firstname?',
                       style: TextStyle(
@@ -58,7 +57,7 @@ class AuthenticationScreen extends StatelessWidget {
                         fontFamily: 'Brandon Grotesque',
                       ),
                     ),
-                    Spacer(),
+                    const SizedBox(height: 56),
                     SizedBox(
                       width: double.infinity,
                       height: 56,
@@ -67,13 +66,12 @@ class AuthenticationScreen extends StatelessWidget {
                         route: '/home',
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 88),
                   ],
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
       ),
     );
   }
