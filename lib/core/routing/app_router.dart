@@ -3,8 +3,9 @@ import 'package:fruit_hub/core/routing/routes.dart';
 import 'package:fruit_hub/feature/ui/screen/auth/authentication_screen.dart';
 import 'package:fruit_hub/feature/ui/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../feature/ui/screen/home.dart';
+import '../../feature/ui/screen/add_to_basket.dart';
+
 
 class AppRouter {
   static final router = GoRouter(
@@ -25,7 +26,7 @@ class AppRouter {
       GoRoute(
         path: Routes.addToBasket,
         builder: (context, state) =>
-            const Scaffold(body: Center(child: Text('Add to basket screen'))),
+            const Scaffold(body: AddToBasketScreen(name: '', price: '', imagePath: "assets/images/glowing_Berry_Fruit.png")),
       ),
       GoRoute(
         path: Routes.orderList,
