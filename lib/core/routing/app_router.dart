@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/routing/routes.dart';
+import 'package:fruit_hub/feature/ui/screen/auth/authentication_screen.dart';
+import 'package:fruit_hub/feature/ui/screen/home/home.dart';
+import 'package:fruit_hub/feature/ui/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -7,19 +10,16 @@ class AppRouter {
     initialLocation: '/',
     routes: [
       GoRoute(
-        path: Routes.welcome,
-        builder: (context, state) =>
-            const Scaffold(body: Center(child: Text('Welcome screen'))),
+        path: Routes.splash,
+        builder: (context, state) => SplashScreen(),
       ),
       GoRoute(
         path: Routes.auth,
-        builder: (context, state) =>
-            const Scaffold(body: Center(child: Text('Auth screen'))),
+        builder: (context, state) => AuthenticationScreen(),
       ),
       GoRoute(
         path: Routes.home,
-        builder: (context, state) =>
-            const Scaffold(body: Center(child: Text('Home screen'))),
+        builder: (context, state) => HomeScreen()
       ),
       GoRoute(
         path: Routes.addToBasket,
