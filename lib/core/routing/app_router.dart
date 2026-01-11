@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/routing/routes.dart';
 import 'package:fruit_hub/feature/ui/screen/auth/authentication_screen.dart';
-import 'package:fruit_hub/feature/ui/screen/home/home.dart';
 import 'package:fruit_hub/feature/ui/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../feature/ui/screen/home.dart';
 
 class AppRouter {
   static final router = GoRouter(
